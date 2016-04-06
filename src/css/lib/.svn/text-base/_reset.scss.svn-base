@@ -1,0 +1,81 @@
+@import "_variable";
+
+body,p,ul,li,dt,dd,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+    font-weight:normal;
+}
+
+ul,li,dd{
+    list-style:none;
+}
+
+img{
+    border:none;
+    outline:none;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+a{
+    text-decoration:none;
+    &:hover{
+        text-decoration:underline;
+    }
+}
+
+html{
+    height:100%;
+}
+
+body{
+    position:relative;
+    font:12px/1.5 'microsoft yahei', arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color:$BODY_BG_COLOR;
+    min-width:$LAYOUT_WIDTH;
+    color:$TEXTCOLOR_NORMAL;
+    min-height:100%;
+    padding-bottom:81px;
+    @extend %border-box;
+    // @extend %word-break;
+}
+
+input, textarea, button, select{
+    font-size:1em;
+    font-family: inherit;
+}
+
+::-webkit-input-placeholder {
+    color: $GRAY;
+}
+
+:-moz-placeholder {
+    color: $GRAY;
+}
+
+::-moz-placeholder {
+    color: $GRAY;
+}
+
+:-ms-input-placeholder {
+    color: $GRAY;
+}
+
+.scroll{
+    &::-webkit-scrollbar{
+        width:8px;
+        background:#eee;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius:4px;
+        background:#ddd;
+    }
+}

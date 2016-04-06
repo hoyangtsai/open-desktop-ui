@@ -1,0 +1,368 @@
+.hidden{
+    display:none;
+}
+
+.clearfix{
+    @extend %clearfix;
+}
+
+.disabled, :disabled{
+    @include opacity(0.4);
+    cursor: default;
+    pointer-events: none;
+    @extend %user-select-none;
+}
+
+.layout{
+    width:$LAYOUT_WIDTH;
+    margin:0 auto;
+}
+
+.mod-box{
+    margin-top:84px;
+}
+
+.mod-head{
+    position:relative;
+    padding-left:12px;
+    height:36px;
+    line-height:36px;
+    margin-bottom:24px;
+    &:before{
+        position:absolute;
+        content:'';
+        width:4px;
+        height:28px;
+        // @include base64("../img/base64/mod-head.png");
+        top:4px;
+        left:0;
+    }
+    .more{
+        position:absolute;
+        right:0;
+        bottom:0;
+        color:$GREEN;
+        font-size:16px;
+        line-height:normal;
+        &:hover{
+            color:$HOVER;
+        }
+    }
+
+    &.mod-head-small{
+        height:28px;
+        line-height:28px;
+        margin-bottom:12px;
+        &:before{
+            height:20px;
+        }
+    }
+
+    .mod-head-tips{
+        color:$TEXTCOLOR_WEAK;
+        margin:0 0 0 12px;
+    }
+}
+
+.mod-title{
+    display:inline-block;
+    vertical-align: top;
+    margin-top:4px;
+    @extend %hide-text;
+}
+.mod-title-small {
+    font-size: 20px;
+}
+
+.mod-img-info{
+    position:relative;
+    img{
+        vertical-align: top;
+    }
+    .img-info{
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        min-height:9 * $CELL_HEIGHT;
+        line-height:9 * $CELL_HEIGHT;
+        padding:0 (2 * $CELL_WIDTH);
+        font-size:18px;
+        color:#fff;
+        @extend %text-overflow;
+        @extend %border-box;
+        // @include base64("../img/base64/opacity50.png");
+
+        h4{
+            @extend %text-overflow;
+        }
+    }
+}
+
+.mod-tab-panel{
+    white-space: nowrap;
+    @include border(all);
+    background:#F6F6F6;
+    .tab-item{
+        display:inline-block;vertical-align: top;
+        font-size:16px;
+        color:$TEXTCOLOR_WEAK;
+        background:#F6F6F6;
+        @include border(all);
+        margin:-1px auto -1px -1px;
+        cursor:pointer;
+        .item-in{
+            display:inline-block;vertical-align: top;
+            padding:0 28px;
+            line-height:39px;
+        }
+        &.cur{
+            background:#fff;
+            border-bottom-color:#fff;
+            color:$TEXTCOLOR_NORMAL;
+            a{
+                color:$TEXTCOLOR_NORMAL;
+            }
+        }
+        a{
+            color:$TEXTCOLOR_WEAK;
+        }
+    }
+}
+
+.mod-big-title{
+    padding:40px 0 0;
+
+    .caption{
+        font-size:28px;
+        line-height:36px;
+    }
+
+    .intro{
+        color:$TEXTCOLOR_WEAK;
+        font-size:16px;
+        margin-top:5px;
+    }
+}
+
+.mod-sys-msg{
+    text-align:center;
+    padding:103px 0;
+
+    .sys-msg-icon{
+        display:inline-block;vertical-align: top;
+
+        &.warn{
+            width:60px;
+            height:60px;
+            // @include sprite('../../slice/com/sys-msg-warn.png', g);
+        }
+
+        &.suc{
+            width:42px;
+            height:42px;
+            // @include sprite('../../slice/com/sys-msg-suc.png', g);
+        }
+    }
+
+    .sys-msg-title{
+        display:inline-block;vertical-align: top;
+        font-size:28px;
+        margin-left:15px;
+    }
+
+    .sys-msg-details{
+        font-size:16px;
+        color:$TEXTCOLOR_WEAK;
+        margin-top:17px;
+    }
+
+    .btn-wrap{
+        margin-top:30px;
+    }
+}
+
+.mod-recommend-nav{
+    border-top:1px solid $BORDERCOLOR;
+
+    .nav-list{
+        @extend %no-wrap;
+
+        .item{
+            width:50%;
+            height:165px;
+            position:relative;
+            display:inline-block;vertical-align: top;
+            @include border(all);
+            margin-top:-1px;
+            margin-left:-1px;
+            margin-bottom:-1px;
+            text-align:center;
+
+            &:hover{
+                background:$MOD_HOVER_COLOR;
+            }
+        }
+
+        .icon{
+            display:inline-block;vertical-align: top;
+
+            &.service{
+                width:24px;
+                height:26px;
+                top:27px;
+                left:156px;
+                margin:10px 13px 0 0;
+                // @include sprite('../../slice/com/recommend-nav-service.png', g);
+            }
+
+            &.userinfo{
+                width:24px;
+                height:27px;
+                top:27px;
+                left:156px;
+                margin:8px 13px 0 0;
+                // @include sprite('../../slice/com/recommend-nav-info.png', g);
+            }
+
+            &.proj{
+                width:25px;
+                height:26px;
+                top:27px;
+                left:156px;
+                margin:8px 13px 0 0;
+                // @include sprite('../../slice/com/recommend-nav-proj.png', g);
+            }
+        }
+
+        .info{
+            font-size:16px;
+            color:$TEXTCOLOR_WEAK;
+            line-height:44px;
+            padding:25px 0 17px;
+        }
+    }
+}
+
+.mod-terms-of-service{
+    margin-top:12px;
+    color:$TEXTCOLOR_WEAK;
+
+    .item{
+        margin-bottom:12px;
+        &:last-child{
+            margin-bottom:0;
+        }
+        .input-tips{
+            margin-top:2px;
+        }
+    }
+
+    a{
+        color:$GREEN;
+    }
+}
+
+.mod-white-box{
+    background:#fff;
+    @include border(all);
+}
+
+.mod-q{
+    display:inline-block;vertical-align: top;
+    cursor:pointer;
+    width:16px;
+    height:16px;
+    // @include sprite('../../slice/com/q.png', g);
+}
+
+.mod-crumb {
+    width: 200 * $CELL_WIDTH;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 32px auto 16px;
+    a {
+        color: $TEXTCOLOR_NORMAL;
+        &:hover {
+            color: $GREEN;
+        }
+    }
+}
+
+.mod-empty{
+    text-align:center;
+    font-size:28px;
+    color:$TEXTCOLOR_WEAK_MORE;
+    @extend %border-box;
+    padding:200px 0;
+    a{
+        font-size:16px;
+        color:$GREEN;
+        &:hover{
+            text-decoration: none;
+            color:$HOVER;
+        }
+    }
+}
+
+.mod-expand, .mod-collapse {
+    display:inline-block;vertical-align: top;
+    color: $GREEN;
+    cursor: pointer;
+    &:after {
+        display:inline-block;vertical-align: top;
+        content: "";
+        width: 13px;
+        height: 8px;
+        position: relative;
+        top: 4px;
+        left: 4px;
+    }
+}
+.mod-expand:after {
+    // @include base64("../img/base64/icon-expand.png");
+}
+.mod-collapse:after {
+    // @include base64("../img/base64/icon-collapse.png");
+}
+
+.mod-tips{
+    width:1200px;
+    border: 1px solid #F5E0A9;
+    background: #FFFDF1;
+    color: #EF6512;
+    font-size: 14px;
+    padding: 4px 15px;
+    position: relative;
+    margin:0 auto;
+    @extend %border-box;
+    text-align:center;
+    .close{
+        position:absolute;
+        width:10px;
+        height:10px;
+        // @include sprite('../../slice/com/tips-close.png', g);
+        right:10px;
+        top:10px;
+        cursor:pointer;
+    }
+    &.mt{
+        margin-top:20px;
+    }
+}
+
+.mod-form-card{
+    .mod-tips{
+        margin:-1px 0 0 -1px;
+    }
+}
+
+.mod-notice {
+    background-color: #f4f4f4;
+    color: $TEXTCOLOR_WEAK;
+    font-size: 14px;
+    padding: 18px;
+    & > .mod-title {
+        margin-bottom: 10px;
+    }
+}
