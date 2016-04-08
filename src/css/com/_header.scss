@@ -17,9 +17,11 @@ $header_height: 59px;
         a{
             display:block;
             height:$header_height;
+            line-height: $header_height;
+            text-align: center;
             // @include sprite("../../slice/com/logo.png", g);
-            @extend %hide-text;
-            background: url("../../slice/com/logo.png") no-repeat;
+            // @extend %hide-text;
+            // background: url("../../slice/com/logo.png") no-repeat;
         }
     }
     .nav{
@@ -28,6 +30,9 @@ $header_height: 59px;
         top:0;
         font-size:16px;
         color:$TEXTCOLOR_NORMAL;
+        ul {
+            list-style-type: none;
+        }
         li{
             position:relative;
             float:left;

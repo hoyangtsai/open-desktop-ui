@@ -1,14 +1,16 @@
 import React from 'react';
+
 import Header from './com/Header';
 
-class Main extends React.Component {
+class Form extends React.Component {
   render() {
     return (
-      <div className="main-container">
+      <div>
         <Header />
+        <h2>表单</h2>
       </div>
     )
   }
 };
 
-export default Main;
+export default Form;

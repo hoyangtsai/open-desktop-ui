@@ -13,13 +13,13 @@ gulp.task('webpack', function() {
         console.log('err : ', err)
         console.log('stats : ', stats);
       })
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('./dist'))
     .pipe($.livereload());
 });
 
 gulp.task('watch', ['server'], function() {
-  $.livereload.listen({ start: true });
-  gulp.watch(['src/*.js'], ['webpack']);
+  $.livereload({ start: true, basePath: 'dist' });
+  gulp.watch(['src/**'], ['webpack']);
 });
 
 gulp.task('server', function(done) {
