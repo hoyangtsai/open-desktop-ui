@@ -17,7 +17,7 @@ class Header extends React.Component {
     return (
       <div className="header">
         <div className="layout">
-          <h2><Link to="/">Open UI Desktop</Link></h2>
+          <h2><Link to="/">Open Desktop UI</Link></h2>
           <div className="nav">
             <ul>
               <li className="has-sub">

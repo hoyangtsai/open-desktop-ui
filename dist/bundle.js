@@ -24910,7 +24910,7 @@
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { to: '/' },
-	              'Open UI Desktop'
+	              'Open Desktop UI'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -25355,51 +25355,55 @@
 	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'ui-box-item' },
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button' },
-	            '正常按钮'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button ui-button-primary' },
-	            '突出'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button ui-button-suc' },
-	            '重点突出'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button' },
-	            '很多文字时候的样子'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button disabled' },
-	            '不可用状态'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button ui-button-small' },
-	            '小按钮'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button ui-button-small ui-button-primary' },
-	            '小按钮'
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            { href: '', className: 'ui-button ui-button-small ui-button-suc' },
-	            '小按钮'
-	          ),
+	          { className: 'layout' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'ui-button ui-button-primary mt10' },
-	            '整块都是按钮'
+	            { className: 'ui-box-item' },
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button' },
+	              '正常按钮'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button ui-button-primary' },
+	              '突出'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button ui-button-suc' },
+	              '重点突出'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button' },
+	              '很多文字时候的样子'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button disabled' },
+	              '不可用状态'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button ui-button-small' },
+	              '小按钮'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button ui-button-small ui-button-primary' },
+	              '小按钮'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: '', className: 'ui-button ui-button-small ui-button-suc' },
+	              '小按钮'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'ui-button ui-button-primary mt10' },
+	              '整块都是按钮'
+	            )
 	          )
 	        )
 	      );
