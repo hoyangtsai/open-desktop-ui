@@ -12,16 +12,15 @@ $header_height: 59px;
     .layout{
         position:relative;
     }
-    h1{
+    h1 {
         width:162px;
-        a{
+        a {
             display:block;
             height:$header_height;
             line-height: $header_height;
             text-align: center;
             // @include sprite("../../slice/com/logo.png", g);
             // @extend %hide-text;
-            // background: url("../../slice/com/logo.png") no-repeat;
         }
     }
     .nav{
