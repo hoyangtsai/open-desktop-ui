@@ -21,6 +21,7 @@ module.exports = {
   },
   resolve: {
     root: path.resolve(__dirname, './src/'),
+    modulesDirectories: ['node_modules'],
     alias: {
       css: 'css',
       img: 'img'
