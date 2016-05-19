@@ -36,14 +36,11 @@ html{
 }
 
 body{
-    position:relative;
-    font:12px/1.5 'microsoft yahei', arial, sans-serif;
+    position: relative;
+    font: 12px/1.5 'microsoft yahei', arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color:$BODY_BG_COLOR;
-    min-width:$LAYOUT_WIDTH;
-    color:$TEXTCOLOR_NORMAL;
-    min-height:100%;
-    padding-bottom:81px;
+    height: 100%;
     @extend %border-box;
 }
 

@@ -33,21 +33,13 @@
     }
 }
 
-.ui-button-small{
-    line-height:30px;
-    min-width:60px;
-    padding:0 12px;
-    font-size:14px;
-}
-
-.ui-button-primary{
+.ui-button-primary {
     color:$GREEN !important;
     border-color:$GREEN;
 
     &:hover{
         background-color:#E2F5F4;
     }
-
     &.disabled{
         &:hover{
             background-color:#fff;
@@ -55,7 +47,7 @@
     }
 }
 
-.ui-button-suc{
+.ui-button-suc, .ui-button-fill {
     background-color:$GREEN;
     color:#fff !important;
     border-color:$GREEN;
@@ -71,6 +63,18 @@
     }
 }
 
+.ui-button-small {
+    line-height:30px;
+    min-width:60px;
+    padding:0 12px;
+    font-size:14px;
+}
+
 div.ui-button{
     display:block;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 18px;
 }

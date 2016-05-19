@@ -6,7 +6,6 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import Index from './components/Index';
 import Button from './components/Button';
-import Form from './components/Form';
 
 import 'css/g';
 
@@ -25,7 +24,6 @@ render((
       <Route path="/" component={App}>
         <IndexRoute component={Index} />
         <Route path="button" component={Button} />
-        <Route path="form" component={Form} />
       </Route>
     </Router>
   ), document.getElementById('app')

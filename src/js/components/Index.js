@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './com/Header';
+
 import AsideNav from './com/AsideNav';
 
 class Index extends React.Component {
   render() {
     return (
-      <div className="main-container">
+      <div>
         <AsideNav />
-        <div className="layout">
+        <div className="main-cont">
           <h1 className="index-header">首页</h1>
         </div>
       </div>
