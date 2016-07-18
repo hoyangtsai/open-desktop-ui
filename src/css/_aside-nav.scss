@@ -1,0 +1,33 @@
+@import "lib/_variable";
+@import "lib/_mixins";
+
+.aside-nav {
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background: $WHITE;
+    border-right: 1px solid $BORDERCOLOR;
+    @extend %border-box;
+    padding: 24px 0 0 24px;
+}
+
+a {
+    font-size: 16px;
+    color: $TEXTCOLOR_NORMAL;
+    text-decoration: none;
+}
+
+.aside-nav-index {
+    margin-bottom: 36px;
+
+    // &:before {
+    //     content: "";
+    //     display: inline-block;
+    //     width: 60px;
+    //     height: 60px;
+    //     background: url('../../img/logo.png') no-repeat;
+    // }
+}

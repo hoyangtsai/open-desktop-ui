@@ -1,0 +1,608 @@
+@import "../lib/_variable";
+@import "../lib/_mixins";
+
+$default-input-width: 450px;
+$form-row-mt: 32px;
+$form-grid-width: 162px;
+$form-gutter: 20px;
+
+.mod-form-card{
+    margin-top:28px;
+    a{
+        color:$GREEN;
+    }
+    .layout{
+        background:#fff;
+        @include border(all);
+        @extend %border-box;
+    }
+
+    &.mb{
+        margin-bottom:28px;
+    }
+
+    .ui-table{
+        td{
+            padding-top:32px;
+            padding-bottom:32px;
+        }
+    }
+}
+
+.mod-form-head{
+    font-size: 18px;
+    padding: 20px 20px 0 20px;
+    line-height:24px;
+
+    .remark {
+        font-size: 16px;
+        color: $TEXTCOLOR_WEAK_MORE;
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+
+.mod-form-body{
+    padding:0 $form-gutter 32px;
+}
+
+.form-row{
+    margin-top: $form-row-mt;
+
+    .form-tit{
+        display:inline-block;vertical-align: top;
+        font-size:16px;
+        line-height:28px;
+        width:$form-grid-width;
+        padding:6px 0;
+        color:$TEXTCOLOR_WEAK;
+    }
+    .form-tit-tips{
+        color:$TEXTCOLOR_WEAK_MORE;
+        font-size:14px;
+    }
+    .form-cont{
+        display:inline-block;vertical-align: top;
+        max-width:980px;
+    }
+
+    &.mt{
+        margin-top:$form-row-mt;
+    }
+
+    .text{
+        color:$TEXTCOLOR_WEAK;
+        padding:6px 0;
+        font-size:16px;
+        line-height:28px;
+        &.mb{
+            margin-bottom:6px;
+        }
+        &.mt{
+            margin-top:32px;
+        }
+        &.text-small{
+            font-size:14px;
+        }
+    }
+
+    .ui-radio-wrap{
+        min-width:$form-grid-width;
+        margin:6px 0;
+    }
+
+    .check-col{
+        padding-top:2px;
+        .ui-checkbox-wrap{
+            margin:6px 0;
+            min-width:$form-grid-width;
+            &.other{
+                min-width:auto;
+            }
+        }
+        .ui-input{
+            vertical-align: top;
+            width:67px;
+            margin-left:7px;
+        }
+        .input-tips{
+            margin-top:6px;
+            margin-left:0;
+        }
+        .address-other{
+            display:inline-block;
+            vertical-align: top;
+            .input-tips{
+                margin-left:$form-gutter;
+            }
+        }
+    }
+
+    .form-col{
+        &.mb{
+            margin-bottom:10px;
+        }
+        &.mt{
+            margin-top:10px;
+        }
+        .ml {
+            margin-left: 6px;
+        }
+        .time-range {
+            font-size: 14px;
+            line-height: 40px;
+            margin: 0 6px;
+        }
+        .mr {
+            margin-right: 12px;
+        }
+    }
+
+    .currency-wrap{
+        .ui-checkbox-wrap{
+            min-width:72px;
+        }
+    }
+}
+
+.default-input-width{
+    width:$default-input-width;
+
+    &.ui-textarea{
+        width:$default-input-width + 18px;
+    }
+
+    &.ui-input-x{
+        width:$default-input-width - 41px;
+    }
+
+    &.ui-textarea-x{
+        width:$default-input-width + 6px;
+    }
+}
+
+.input-tips{
+    display:inline-block;vertical-align: top;
+    line-height:21px;
+    margin:11px 0 0 $form-gutter;
+    font-size:12px;
+    .ico-err,.ico-suc{
+        margin:1px 5px 0 0;
+    }
+}
+
+.err-tips{
+    color:$RED;
+}
+
+.suc-tips{
+    color:$GREEN;
+}
+
+.ico-err {
+    display:inline-block;vertical-align: top;
+    width:18px;
+    height:18px;
+    background: url('../../slice/com/ico-err.png') no-repeat;
+}
+
+.ico-suc{
+    display:inline-block;vertical-align: top;
+    width:18px;
+    height:18px;
+    background: url('../../slice/com/ico-suc.png') no-repeat;
+}
+
+.more-tips{
+    color:$TEXTCOLOR_WEAK_MORE;
+}
+
+p.more-tips{
+    padding-top: 4px;
+    line-height:24px;
+}
+
+span.more-tips{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.require{
+    color:$RED;
+    margin:0 3px;
+    display:inline-block;
+    vertical-align: top;
+    height:16px;
+    @extend %border-box;
+    padding-top:3px;
+}
+
+.mod-opt{
+    position:relative;
+    height:78px;
+    z-index:300;
+
+    &.pos-fixed{
+        .inner{
+            position:relative;
+            width:100%;
+            left:auto;
+            bottom:auto;
+
+            &:before{
+                @include opacity(0);
+            }
+
+            .layout{
+                .tips{
+                    color:$TEXTCOLOR_WEAK;
+                }
+            }
+        }
+    }
+
+    .inner{
+        position:fixed;
+        width:100%;
+        left:0;
+        bottom:0;
+        text-align:center;
+        padding:16px 0;
+
+        &:before{
+            position:absolute;
+            content:'';
+            top:0;right:0;bottom:0;left:0;
+            background-color:#A9A9A9;
+            @include opacity(0.9);
+            @include trans(opacity 0.3s linear);
+        }
+
+        .layout{
+            position:relative;
+
+            .tips{
+                position:absolute;
+                left:0;top:0;
+                line-height:42px;
+                color:#fff;
+            }
+        }
+
+        .ui-button{
+            margin:0 6px;
+        }
+    }
+}
+
+
+// .data-item{
+//     position:relative;
+//     font-size:14px;
+//     display:inline-block;vertical-align: top;
+//     margin-bottom:12px;
+//     background-color:#fff;
+
+//     &:hover{
+//         background-color:$MOD_HOVER_COLOR;
+//     }
+
+//     .data-text{
+//         display:inline-block;vertical-align: top;
+//         line-height:38px;
+//         @include border(all);
+//         padding:0 8px;
+//         width:$default-input-width;
+//         cursor:pointer;
+//     }
+
+//     .delete{
+//         position:absolute;
+//         width:20px;
+//         height:20px;
+//         top:10px;
+//         right:10px;
+//         background: url('../slice/com/data-item-delete.png') no-repeat;
+//         cursor:pointer;
+//         background-color:#ddd;
+//         display:none;
+
+//         &:hover{
+//             background-color:#4c5161;
+//         }
+
+//         @extend %transition;
+//     }
+
+//     &:hover{
+//         .delete{
+//             display:block;
+//         }
+//     }
+// }
+
+// .mod-form-card-btnwrap{
+//     text-align:center;
+//     margin:15px 0;
+
+//     .ui-button{
+//         margin:0 6px;
+//     }
+// }
+
+// .name-card-wrap{
+//     .name-card{
+//         margin:0 20px 12px 0;
+//     }
+// }
+
+// .name-card{
+//     display:inline-block;vertical-align: top;
+//     @include border(all);
+//     background-color:#fff;
+//     width:298px;
+//     position:relative;
+//     cursor:pointer;
+
+//     &:hover{
+//         background-color:$MOD_HOVER_COLOR;
+//         .close{
+//             display:block;
+//         }
+//     }
+
+//     .close{
+//         position:absolute;
+//         width:20px;
+//         height:20px;
+//         top:0;
+//         right:0;
+//         @include sprite('../slice/com/name-card-close.png', form);
+//         background-color:#ddd;
+//         cursor:pointer;
+//         display:none;
+
+//         &:hover{
+//             background-color:#4c5161;
+//         }
+//     }
+
+//     img{
+//         display:inline-block;vertical-align: top;
+//         @include border(right);
+//     }
+
+//     .info{
+//         display:inline-block;vertical-align: top;
+//         padding:14px 7px 0;
+//         width:170px;
+//         color:$TEXTCOLOR_WEAK;
+//         font-size:14px;
+//     }
+
+//     .name{
+//         font-size:16px;
+//         color:$TEXTCOLOR_NORMAL;
+//         margin-bottom:2px;
+
+//         span{
+//             margin-right:20px;
+//         }
+//     }
+
+//     .record{
+//         @include line-overflow(2);
+//     }
+// }
+
+// .pay-card-wrap{
+//     overflow:hidden;
+// }
+// .pay-card {
+//     float:left;
+//     vertical-align: top;
+//     @include border(all);
+//     background-color: #fff;
+//     width: 270px;
+//     // height: 242px;
+//     position:relative;
+//     cursor:pointer;
+//     @extend %border-box;
+//     padding: 0 20px 20px;
+//     font-size: 14px;
+//     line-height: 20px;
+//     margin: 0 0 20px 20px;
+//     &:first-child{
+//         margin-left:0;
+//     }
+
+//     .pay-card-edit, .pay-card-del {
+//         display: none;
+//         vertical-align: top;
+//         position: absolute;
+//         width: 18px;
+//         height: 18px;
+//     }
+
+//     .pay-card-edit {
+//         @include sprite('../../slice/com/pay-card-edit.png', form);
+//         top: 8px;
+//         right: 38px;
+//         &:hover {
+//             @include sprite('../../slice/com/pay-card-edit-hover.png', form);
+//         }
+//     }
+
+//     .pay-card-del {
+//         @include sprite('../../slice/com/pay-card-del.png', form);
+//         top: 12px;
+//         right: 8px;
+//         &:hover {
+//             @include sprite('../../slice/com/pay-card-del-hover.png', form);
+//         }
+//     }
+
+//     &:hover {
+//         background: $MOD_HOVER_COLOR;
+//         .pay-card-edit, .pay-card-del {
+//             display: inline-block;
+//         }
+//     }
+
+//     &.edit, &.checked {
+//         @include border(all, 1px, solid, $GREEN);
+//     }
+
+//     &.checked {
+//         &:before{
+//             position:absolute;
+//             content:'';
+//             border-width: 20px;
+//             border-style:dashed solid solid dashed;
+//             border-color:transparent $GREEN $GREEN transparent;
+//             bottom:0;
+//             right:0;
+//         }
+//         &:after{
+//             position:absolute;
+//             content:'';
+//             width: 17px;
+//             height: 14px;
+//             @include sprite('../../slice/com/pay-card-checked.png', form);
+//             bottom: 6px;
+//             right: 4px;
+//         }
+
+//     }
+//     .pay-card-row {
+//         margin-top: 20px;
+//         width: 100%;
+//     }
+//     .pay-card-col-title, .pay-card-col-val {
+//         display: inline-block;
+//         vertical-align: top;
+//     }
+//     .pay-card-col-title {
+//         width: 32%;
+//     }
+//     .pay-card-col-val {
+//         width: 65%;
+//     }
+//     .pay-card-val {
+//         @extend %text-overflow;
+//     }
+//     .pay-card-mail {
+//         @extend %word-break;
+//         @include line-overflow(2);
+//     }
+//     .pay-card-company {
+//         @extend %word-break;
+//         @include line-overflow(3);
+//     }
+// }
+
+// .mod-sub-form{
+//     background:#f8f8f8;
+//     padding:32px $form-gutter;
+//     margin-bottom:10px;
+//     width:980px;
+//     @extend %border-box;
+
+//     .sub-form-row{
+//         &.mt{
+//             margin-top:32px;
+//         }
+//     }
+
+//     .sub-form-tit{
+//         display:inline-block;
+//         vertical-align: top;
+//         font-size:16px;
+//         width:$form-grid-width;
+//         padding:8px 0;
+//         color:$TEXTCOLOR_WEAK;
+//         .form-tit-tips{
+//             color:$TEXTCOLOR_WEAK_MORE;
+//             font-size:14px;
+//         }
+//     }
+
+//     .sub-form-cont{
+//         display:inline-block;vertical-align: top;
+//         max-width:795px;
+//     }
+
+//     .sub-form-btnwrap{
+//         padding:0 0 0 150px;
+//         .ui-button{
+//             margin:0 8px 0 0;
+//         }
+//     }
+
+//     .sub-form-header {
+//         font-size: 16px;
+//         color: #b7b7b7;
+//         margin-bottom: 32px;
+//     }
+
+//     .ui-button {
+//         margin-right: 12px;
+//     }
+// }
+
+// .chips{
+//     display:inline-block;vertical-align: top;
+//     font-size:14px;
+//     .ui-input{
+//         vertical-align: middle !important;
+//         margin:0 !important;
+//     }
+//     .more-tips{
+//         color:$TEXTCOLOR_NORMAL;
+//         display:inline-block;
+//         vertical-align: top;
+//         margin:7px 9px 0;
+//     }
+// }
+
+// .add-financing {
+//     font-size:14px;
+//     line-height: 40px;
+//     display:inline-block;
+//     color:$GREEN;
+// }
+
+// .add-item {
+//     font-size: 14px;
+//     display: inline-block;
+//     color: $GREEN;
+//     margin: 0 0 20px;
+// }
+
+// .tag-wrap{
+//     margin-bottom:-10px;
+//     .ui-tag{
+//         margin-bottom:10px;
+//     }
+// }
+
+// .item-ctrl {
+//     position: relative;
+//     display: inline-block;
+//     vertical-align: middle;
+
+//     .delete{
+//         position:absolute;
+//         width:20px;
+//         height:20px;
+//         @include sprite('../slice/com/data-item-delete.png', form);
+//         cursor:pointer;
+//         background-color: #ddd;
+//         display: block;
+
+//         &:hover{
+//             background-color: #4c5161;
+//         }
+//         @extend %transition;
+//     }
+// }

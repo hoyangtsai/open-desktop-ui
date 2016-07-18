@@ -2,10 +2,9 @@ import React from 'react';
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-// import routes from './config/routes';
-
 import Index from './components/Index';
 import Button from './components/Button';
+import Spacing from './components/Spacing';
 
 import 'css/g';
 
@@ -24,12 +23,13 @@ render((
       <Route path="/" component={App}>
         <IndexRoute component={Index} />
         <Route path="button" component={Button} />
+        <Route path="spacing" component={Spacing} />
       </Route>
     </Router>
   ), document.getElementById('app')
 );
 
 // render((
-//   <Router history={hashHistory}>{routes}</Router>
+//   <Router history={hashHistory}> {routes} </Router>
 //   ), document.getElementById('app')
 // );

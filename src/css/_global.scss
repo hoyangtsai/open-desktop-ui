@@ -1,0 +1,26 @@
+body {
+    position: relative;
+    height: 100%;
+}
+
+body .syntaxhighlighter .line {
+    white-space: pre-wrap !important;
+}
+
+.main-cont {
+  @extend %border-box;
+  padding: 20px 40px  0 280px;
+}
+
+.zc-ui-demo-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.zc-ui-demo-row {
+  flex: 0 0 auto;
+  border: 1px dashed #ddd;
+  padding: 20px 0;
+  margin-bottom: 36px;
+}
+

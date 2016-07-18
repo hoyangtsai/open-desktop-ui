@@ -1,7 +1,5 @@
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var http = require('http');
-var st = require('st');
+var connect = require('gulp-connect');
 
 var webpack = require('webpack-stream');
 var webpackConfig = require('./webpack.config.js');
@@ -14,18 +12,20 @@ gulp.task('webpack', function() {
         console.log('stats : ', stats);
       })
     .pipe(gulp.dest('./dist'))
-    .pipe($.livereload());
+    .pipe(connect.reload());
 });
 
-gulp.task('watch', ['server'], function() {
-  $.livereload({ start: true, basePath: 'dist' });
+
+gulp.task('connect', function() {
+    connect.server({
+        root: 'dist',
+        livereload: true,
+        index: false
+    });
+});
+
+gulp.task('watch', function() {
   gulp.watch(['src/**'], ['webpack']);
 });
 
-gulp.task('server', function(done) {
-  http.createServer(
-    st({ path: __dirname, cache: false, index: 'index.html', path: './dist' })
-  ).listen(8000, done);
-});
-
-gulp.task('default', ['watch']);
+gulp.task('default', ['connect', 'watch']);
